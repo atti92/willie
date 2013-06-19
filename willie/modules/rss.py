@@ -157,7 +157,7 @@ def read_feeds(willie):
         cur.execute('SELECT * FROM recent WHERE channel = %s AND site_name = %s and article_title = %s AND article_url = %s' % (SUB*4), sql_text)
         if len(cur.fetchall()) < 1:
 
-            response = site_name_effect + " %s \x02%s\x02" % (entry.title, article_url)
+            response = site_name_effect + " %s " % (entry.title) # \x02%s\x02 , article_url
             if entry.updated:
                 response += " - %s" % (entry.updated)
 
